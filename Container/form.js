@@ -4,7 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
-
+import axios from 'axios';
 
 export default class FoodMenuList extends Component {
 
@@ -18,7 +18,18 @@ export default class FoodMenuList extends Component {
 	}
 	componentDidMount()
 	{
-			
+
+		axios({
+			method:'get',
+			url:"http://localhost:3000/"
+
+		}).then((response)=> {
+          console.log("reeeeeee",response)
+
+		}).catch((err)=>{
+
+			console.log("errrrr",err)
+		})
 		
 	}
 

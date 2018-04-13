@@ -14,7 +14,7 @@ itemRouter.route('/').get(function (req, res) {
       console.log(err);
     }
     else {
-     res.send("Data Fetched Successfully")
+     res.status(200).json(itms);
     }
   });
 });
@@ -27,7 +27,7 @@ itemRouter.route('/add/post').post(function (req, res) {
     .then(item => {
     // res.redirect('/items');
     console.log("item",item);
-    res.send("Data Saved Successfully")
+    res.status(200).send("Data Saved Successfully")
     })
     .catch(err => {
     res.status(400).send("unable to save to database");
