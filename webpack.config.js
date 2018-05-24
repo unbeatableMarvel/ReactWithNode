@@ -23,11 +23,15 @@ var config = {
             loader: 'babel',
 				
             query: {
-               presets: ['es2015', 'react','stage-0','es2015-node6',"env"]
+               presets: ['es2015', 'react']
             }
 
 
-         }
+         },
+         {
+            test: /(\.css)$/,
+            loaders: ['style-loader', 'css-loader']
+         }    
       ]
    }
 }

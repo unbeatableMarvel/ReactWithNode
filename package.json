@@ -48,12 +48,14 @@
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1"
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "style-loader": "^0.21.0"
   },
   "scripts": {
     "start": "npm-run-all --parallel build:webpack server:on",
     "build:webpack": "webpack-dev-server --hot",
-    "server:on": "babel-node server/app",
+    "server:on": "nodemon server/app --exec babel-node",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
